@@ -27,9 +27,9 @@
 #include "ds_common_types.h"
 
 #include "dell-base-switch-element.h"
-#include <vector>
 
 #ifdef __cplusplus
+#include <vector>
 extern "C" {
 #endif
 
@@ -61,6 +61,7 @@ typedef union {
 t_std_error ndi_switch_set_attribute(npu_id_t npu, BASE_SWITCH_SWITCHING_ENTITIES_SWITCHING_ENTITY_t attr,
         const nas_ndi_switch_param_t *param);
 
+#ifdef __cplusplus
 /**
  * Get list of attributes for switch entity object.
  * @param attrlist is a output param and it will be populated with switch entity
@@ -69,7 +70,7 @@ t_std_error ndi_switch_set_attribute(npu_id_t npu, BASE_SWITCH_SWITCHING_ENTITIE
  */
 
 void ndi_switch_attr_list_get (std::vector<uint32_t> &attrlist);
-
+#endif
 
 /**
  * Get an attribute from the NPU based on the yang switch model and the yang switch types.
